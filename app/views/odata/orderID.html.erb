@@ -1,0 +1,16 @@
+<div>Product ID: <%=@productId%></div><br/>
+<div>The number of orders for product ID <%=@productId%> is <%=@noOfOrders%></div>
+<table>
+	<tr>
+		<td>Order ID's</td>
+		<td>Total Price after discount</td>
+	</tr>
+	<%@ordersHash["value"].each do |orderDetail|%>
+	<tr>
+		<td><%=orderDetail["OrderID"]%></td>
+		<%factor = 1 - orderDetail["Discount"].to_f%>
+		<td>$<%=orderDetail["UnitPrice"].to_f * orderDetail["Quantity"].to_f * factor%></td>
+	</tr>
+	<%end%>
+	
+</table>
