@@ -9,7 +9,7 @@
 	<tr>
 		<td><%=orderDetail["OrderID"]%></td>
 		<%factor = 1 - orderDetail["Discount"].to_f%>
-		<td>$<%=orderDetail["UnitPrice"].to_f * orderDetail["Quantity"].to_f * factor%></td>
+		<td>$<%=(orderDetail["UnitPrice"].to_f * orderDetail["Quantity"].to_f * factor).round(2)%></td>
 	</tr>
 	<%end%>
 	
