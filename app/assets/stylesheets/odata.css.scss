@@ -2,22 +2,24 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+//This is the div that holds the results of asynchronous calls
 #result{
 	padding: 15px;
 }
 
+//Class for error messages which are displayed in red.
 .error{
 	color: red;
 }
 
+//form and field labels are in bold
 .label{
 	font-weight:bold;
 }
 
-.supplier{
 
-}
-
+/*Responsive design, Adjust table columns (which are 
+displayed according to priority*/
 /* Show priority 1 at 320px (20em x 16px) */
 @media screen and (min-width: 20em) {
    .my-custom-class th.ui-table-priority-1,
