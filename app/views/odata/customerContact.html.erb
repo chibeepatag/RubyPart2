@@ -6,5 +6,10 @@ The number of orders for product ID <%=@productID%> is <%=@count%><br/>
 url = "http://services.odata.org/Northwind/Northwind.svc/Orders(#{orderDetail["OrderID"]})/Customer?$format=json"
 	customer = Net::HTTP.get_response(URI.parse(url)).body
 	customerHash = JSON.parse(customer)%>
-	<%=customerHash["ContactName"]%><br/>
+	Customers who ordered productID <%=@productID%> are:
+	<ul  data-role="listview">
+	<li><%=customerHash["ContactName"]%></li>
+	</ul>
 <%end%>	
+
+ 

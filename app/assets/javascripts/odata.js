@@ -24,30 +24,23 @@ function getSupplier(){
 function getOrders(){
 	$("#prodIdForm").submit();
 	
-	/*
 	var productID = getProductId();
-	//$.get("/odata/orderID",  {"productID":productID});
-			
-	$.ajax({
-		url: "/odata/orderID",
-		data: {"productID":productID},
-		async: false,
-		type: "GET",
-		accepts: "html",
-		success: displayResult
-	});
-	*/
+	$.get("/odata/orderID",  {"productID":productID});					
 }
 
 function getCustomers(){
 	var productID = getProductId();
-	$.ajax({
-		url: "/odata/customerContact",
-		data: {"productID":productID},
-		type: "GET",
-		accepts: "html",
-		success: displayResult
-	});
+	if(productID>0){
+		$.ajax({
+			url: "/odata/customerContact",
+			data: {"productID":productID},
+			type: "GET",
+			accepts: "html",
+			success: displayResult
+		});
+	}else{
+		$("#result").html("<span class=\"error\">You must enter a valid product id.</span>");
+	}
 }
 
 function getProductId(){

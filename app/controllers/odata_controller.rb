@@ -73,9 +73,7 @@ class OdataController < ApplicationController
 	#This parses the response body from json to a ruby object.
 	ordersHash = JSON.parse(data)
 	#This makes the object ordersHash available to the view.
-	@ordersHash = ordersHash			
-	#return only the html snippet for ajax response. No need for full html
-	#render(:layout => false) if request.xhr?	
+	@ordersHash = ordersHash				
   end
 
   def customerContact
