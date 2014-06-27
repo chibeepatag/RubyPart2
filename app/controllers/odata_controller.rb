@@ -44,8 +44,7 @@ class OdataController < ApplicationController
 	@companyName = supplierHash["CompanyName"]
 	
 	#return only the html snippet for ajax response. No need for full html
-	render(:layout => false) if request.xhr?
-		
+	render(:layout => false) if request.xhr?		
 	end
 
   def orderID
@@ -75,7 +74,8 @@ class OdataController < ApplicationController
 	ordersHash = JSON.parse(data)
 	#This makes the object ordersHash available to the view.
 	@ordersHash = ordersHash			
-	
+	#return only the html snippet for ajax response. No need for full html
+	render(:layout => false) if request.xhr?	
   end
 
   def customerContact
@@ -103,7 +103,8 @@ class OdataController < ApplicationController
 	orderDetailHash = JSON.parse(orderDetail)
 	#This makes the object ordersHash available to the view.
 	@orderDetailHash = orderDetailHash	
-	
+	#return only the html snippet for ajax response. No need for full html
+	render(:layout => false) if request.xhr?	
   end
   
 end

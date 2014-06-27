@@ -7,20 +7,3 @@ Enter Product ID: <input type="text" name="productID" id="productID"/>
 <button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-shop"   id="orders">Get Orders</button>
 <button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-user"   id="customers">Get Customers</button>
 <div id="result"></div>
-
-
-<form method="get" action="/odata/supplier">
-Enter Product ID: <input type="text" name="productID"/>
-<button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-search" type="submit">Get Supplier</button>
-</form>
-
-<form method="get" action="/odata/orderID">
-Enter Product ID: <input type="text" name="productID"/>
-<button type="submit" class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-shop">Get Orders</button>
-</form>
-
-<form method="get" action="/odata/customerContact">
-Enter Product ID and I will find Customers who ordered it: <input type="text" name="productID"/>
-<button type="submit" class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-user">Get Customer</button>
-</form>
-
