@@ -1,16 +1,28 @@
-<div>Product ID: <%=@productId%></div><br/>
+<div><span class="label"> Product ID:</span> <%=@productId%></div><br/>
 <div>The number of orders for product ID <%=@productId%> is <%=@noOfOrders%></div>
-<table>
-	<tr>
-		<td>Order ID's</td>
-		<td>Total Price after discount</td>
-	</tr>
-	<%@ordersHash["value"].each do |orderDetail|%>
-	<tr>
-		<td><%=orderDetail["OrderID"]%></td>
-		<%factor = 1 - orderDetail["Discount"].to_f%>
-		<td>$<%=(orderDetail["UnitPrice"].to_f * orderDetail["Quantity"].to_f * factor).round(2)%></td>
-	</tr>
-	<%end%>
-	
-</table>
+
+
+
+<table data-role="table" id="table-custom-2" data-mode="columntoggle" class="ui-body-d ui-shadow table-stripe ui-responsive" data-column-btn-theme="b" data-column-btn-text="Columns to display..." data-column-popup-theme="a">
+         <thead>
+           <tr class="ui-bar-d">
+             <th>Order ID's</th>
+             <th>Total Price after discount</th>
+             <th data-priority="3">Unit Price</th>
+             <th data-priority="1">Quantity</th>
+             <th data-priority="5">Discount</th>
+           </tr>
+         </thead>
+         <tbody>
+		 <%@ordersHash["value"].each do |orderDetail|%>
+           <tr>
+             <th><%=orderDetail["OrderID"]%></th>
+			 <%factor = 1 - orderDetail["Discount"].to_f%>
+             <td>$<%=(orderDetail["UnitPrice"].to_f * orderDetail["Quantity"].to_f * factor).round(2)%></td>
+             <td><%=orderDetail["UnitPrice"]%></td>
+			<td><%=orderDetail["Quantity"]%></td>
+			<td><%=orderDetail["Discount"]%></td>
+           </tr> 
+		<%end%>			   
+         </tbody>		 
+       </table>

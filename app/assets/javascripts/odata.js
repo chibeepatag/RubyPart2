@@ -22,19 +22,26 @@ function getSupplier(){
 }
 
 function getOrders(){
+	$("#prodIdForm").submit();
+	
+	/*
 	var productID = getProductId();
+	//$.get("/odata/orderID",  {"productID":productID});
+			
 	$.ajax({
 		url: "/odata/orderID",
 		data: {"productID":productID},
+		async: false,
 		type: "GET",
 		accepts: "html",
 		success: displayResult
 	});
+	*/
 }
 
 function getCustomers(){
 	var productID = getProductId();
-		$.ajax({
+	$.ajax({
 		url: "/odata/customerContact",
 		data: {"productID":productID},
 		type: "GET",

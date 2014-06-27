@@ -75,7 +75,7 @@ class OdataController < ApplicationController
 	#This makes the object ordersHash available to the view.
 	@ordersHash = ordersHash			
 	#return only the html snippet for ajax response. No need for full html
-	render(:layout => false) if request.xhr?	
+	#render(:layout => false) if request.xhr?	
   end
 
   def customerContact
