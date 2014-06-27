@@ -7,13 +7,18 @@ $(document).ready(function(){
 function getSupplier(){
 	var productID = getProductId();
 	
-	$.ajax({
-		url: "/odata/supplier",
-		data: {"productID":productID},
-		type: "GET",
-		accepts: "html",
-		success: displayResult
-	});
+	if(productID>0){
+		$.ajax({
+			url: "/odata/supplier",
+			data: {"productID":productID},
+			type: "GET",
+			accepts: "html",
+			success: displayResult
+		});
+	}else{
+		$("#result").html("<span class=\"error\">You must enter a valid product id.</span>");
+	}
+	
 }
 
 function getOrders(){

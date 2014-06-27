@@ -2,8 +2,10 @@
   <%= javascript_include_tag 'odata' %>
 <% end %>
 <h1>North Wind</h1>
-Enter Product ID: <input type="text" name="productID" id="productID"/>
-<button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-search" id="supplier">Get Supplier</button>
+<label for="productID">Search:</label>
+<input type="search" name="productID" id="productID"/>
+
+<button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-info" id="supplier">Get Supplier</button>
 <button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-shop"   id="orders">Get Orders</button>
 <button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-user"   id="customers">Get Customers</button>
 <div id="result"></div>
