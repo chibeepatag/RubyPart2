@@ -5,10 +5,6 @@ Rails.application.routes.draw do
 
   get 'odata/customerContact'
 
-  get 'supplier/orderID'
-
-  get 'supplier/customerContact'
-
   root 'posts#index'
   
 	resources :posts

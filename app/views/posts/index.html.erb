@@ -1,4 +1,10 @@
 <h1>North Wind</h1>
+Enter Product ID: <input type="text" name="productID" id="productID"/>
+<button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-search" id="supplier">Get Supplier</button>
+<button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-shop"   id="orders">Get Orders</button>
+<button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-user"   id="customers">Get Customers</button>
+<div id="result"></div>
+
 
 <form method="get" action="/odata/supplier">
 Enter Product ID: <input type="text" name="productID"/>
@@ -11,7 +17,7 @@ Enter Product ID: <input type="text" name="productID"/>
 </form>
 
 <form method="get" action="/odata/customerContact">
-Enter Product ID and I will find Customer's who ordered it: <input type="text" name="productID"/>
+Enter Product ID and I will find Customers who ordered it: <input type="text" name="productID"/>
 <button type="submit" class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-user">Get Customer</button>
 </form>
 

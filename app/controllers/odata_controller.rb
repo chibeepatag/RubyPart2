@@ -1,5 +1,5 @@
 class OdataController < ApplicationController
-  def supplier
+  def supplier	
 	#This makes the product id available to the view.
 	@productID = params[:productID].to_i
 	#This retrieves the product id from the request parameter.
@@ -42,6 +42,10 @@ class OdataController < ApplicationController
 	supplierHash = JSON.parse(supplierData)
 	#This prints the supplier name
 	@companyName = supplierHash["CompanyName"]
+	
+	#return only the html snippet for ajax response. No need for full html
+	render(:layout => false) if request.xhr?
+		
 	end
 
   def orderID
