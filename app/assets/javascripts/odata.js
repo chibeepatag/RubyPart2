@@ -22,10 +22,12 @@ function getSupplier(){
 }
 
 function getOrders(){
-	$("#prodIdForm").submit();
-	
 	var productID = getProductId();
-	$.get("/odata/orderID",  {"productID":productID});					
+	if(productID>0){
+		$("#prodIdForm").submit();	
+	}else{
+		$("#result").html("<span class=\"error\">You must enter a valid product id.</span>");
+	}
 }
 
 function getCustomers(){
