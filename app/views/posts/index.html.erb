@@ -1,3 +1,6 @@
+<% content_for :head do %>  
+  <%= javascript_include_tag 'odata' %>
+<% end %>
 <h1>North Wind</h1>
 Enter Product ID: <input type="text" name="productID" id="productID"/>
 <button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-search" id="supplier">Get Supplier</button>
