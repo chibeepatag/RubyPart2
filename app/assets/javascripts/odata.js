@@ -1,9 +1,15 @@
+/*This applies the click handlers to the buttons when the page loads.*/
 $(document).ready(function(){
 	$("#supplier").click(getSupplier);
 	$("#orders").click(getOrders);
 	$("#customers").click(getCustomers);
 });
 
+/*This function gets the product id entered 
+* It then sends a asynchronous call to the server
+* to get the supplier details fo the product.
+* The results are displayed in the result div
+*/
 function getSupplier(){
 	var productID = getProductId();
 	
@@ -21,6 +27,10 @@ function getSupplier(){
 	
 }
 
+/*This function submits the form to 
+* get the orders of the given product id.
+* This is a synchronous call.
+*/
 function getOrders(){
 	var productID = getProductId();
 	if(productID>0){
@@ -30,6 +40,11 @@ function getOrders(){
 	}
 }
 
+/*This function gets the product id entered 
+* It then sends a asynchronous call to the server
+* to get the customers who ordered the product
+* The results are displayed in the result div
+*/
 function getCustomers(){
 	var productID = getProductId();
 	if(productID>0){
@@ -45,10 +60,12 @@ function getCustomers(){
 	}
 }
 
+/*This returns the contents of the text box productID.*/
 function getProductId(){
 	return $("#productID").val();
 }
 
+/*This displays the results of the asynchronous calls.*/
  function displayResult(data){	
 	$("#result").html(data);
 }
