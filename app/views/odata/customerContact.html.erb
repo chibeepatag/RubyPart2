@@ -1,12 +1,12 @@
 <div><span class="label">Product ID:</span> <%=@productID%></div>
 <br/>
 The number of orders for product ID <%=@productID%> is <%=@count%><br/>
-
+Customers who ordered productID <%=@productID%> are:
 <%@orderDetailHash["value"].each do |orderDetail|
 url = "http://services.odata.org/Northwind/Northwind.svc/Orders(#{orderDetail["OrderID"]})/Customer?$format=json"
 	customer = Net::HTTP.get_response(URI.parse(url)).body
 	customerHash = JSON.parse(customer)%>
-	Customers who ordered productID <%=@productID%> are:
+	
 	<ul  data-role="listview">
 	<li><%=customerHash["ContactName"]%></li>
 	</ul>
